@@ -1,7 +1,7 @@
 var through = require("through2"),
   gutil = require("gulp-util"),
-  Path = require("path");
-TFCSpriteConverter = require("tfcsprite");
+  Path = require("path"),
+  TFCSpriteConverter = require("tfcsprite");
 
 module.exports = function (param) {
   "use strict";
