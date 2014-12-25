@@ -13,13 +13,12 @@
   },
   "repository": "HAKASHUN/gulp-tfcsprite",
   "scripts": {
-    "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "istanbul test _mocha --report html -- test/*.js --reporter spec"
   },
   "dependencies": {
     "through2": "*",
     "gulp-util": "~2.2.0",
-    "tfcsprite": "git://github.com/atsumo/tfcsprite.git#master"
+    "tfcsprite": "*"
   },
   "devDependencies": {
     "mocha": "*",

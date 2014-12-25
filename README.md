@@ -1,7 +1,4 @@
-(PLUGIN AUTHOR: Please read [Plugin README conventions](https://github.com/wearefractal/gulp/wiki/Plugin-README-Conventions), then delete this line)
-
 # gulp-tfcsprite
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]
 
 > tfcsprite plugin for [gulp](https://github.com/wearefractal/gulp)
 
@@ -18,9 +15,10 @@ Then, add it to your `gulpfile.js`:
 ```javascript
 var tfcsprite = require("gulp-tfcsprite");
 
-gulp.src("./src/*.ext")
+gulp.src("./src/*.js")
 	.pipe(tfcsprite({
-		msg: "Hello Gulp!"
+	  prefix: '_',
+	  sprites: 'sprites'
 	}))
 	.pipe(gulp.dest("./dist"));
 ```
@@ -29,12 +27,17 @@ gulp.src("./src/*.ext")
 
 ### tfcsprite(options)
 
-#### options.msg
+#### options.prefix
 Type: `String`  
-Default: `Hello World`
+Default: `_`
 
-The message you wish to attach to file.
+image name prefix, default is "_" 
 
+#### options.sprites
+Type: `String`  
+Default: `sprites`
+
+sprite file json data directory, default is sprites
 
 ## License
 
@@ -45,9 +48,3 @@ The message you wish to attach to file.
 
 [travis-url]: http://travis-ci.org/HAKASHUN/gulp-tfcsprite
 [travis-image]: https://secure.travis-ci.org/HAKASHUN/gulp-tfcsprite.png?branch=master
-
-[coveralls-url]: https://coveralls.io/r/HAKASHUN/gulp-tfcsprite
-[coveralls-image]: https://coveralls.io/repos/HAKASHUN/gulp-tfcsprite/badge.png
-
-[depstat-url]: https://david-dm.org/HAKASHUN/gulp-tfcsprite
-[depstat-image]: https://david-dm.org/HAKASHUN/gulp-tfcsprite.png
