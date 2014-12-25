@@ -1,13 +1,22 @@
 var through = require("through2"),
-	gutil = require("gulp-util");
+	gutil = require("gulp-util"),
+  Path = require("path");
+  TFCSpriteConverter = require("tfcsprite");
 
 module.exports = function (param) {
 	"use strict";
 
-	// if necessary check for required param(s), e.g. options hash, etc.
-	if (!param) {
-		throw new gutil.PluginError("gulp-tfcsprite", "No param supplied");
-	}
+  param.sprites = param.sprites || 'sprites';
+  param.prefix = param.prefix || '_';
+
+  function parsePath(path) {
+    var extname = Path.extname(path);
+    return {
+      dirname: Path.dirname(path),
+      basename: Path.basename(path, extname),
+      extname: extname
+    };
+  }
 
 	// see "Writing a plugin"
 	// https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/README.md
@@ -35,9 +44,15 @@ module.exports = function (param) {
 		// check if file.contents is a `Buffer`
 		if (file.isBuffer()) {
 
-			// manipulate buffer in some way
-			// http://nodejs.org/api/buffer.html
-			file.contents = new Buffer(String(file.contents) + "\n" + param);
+      var parsedPath = parsePath(file.path);
+      var converted = new TFCSpriteConverter(
+        file.path,
+        parsedPath.dirname + '/' + param.sprites,
+        param.prefix
+      ).convert();
+
+
+      file.contents = new Buffer(converted);
 
 			this.push(file);
 

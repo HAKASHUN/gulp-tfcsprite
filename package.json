@@ -19,7 +19,7 @@
   "dependencies": {
     "through2": "*",
     "gulp-util": "~2.2.0",
-    "tfcsprite": "*"
+    "tfcsprite": "git://github.com/atsumo/tfcsprite.git#master"
   },
   "devDependencies": {
     "mocha": "*",
