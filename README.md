@@ -1,5 +1,5 @@
 # gulp-tfcsprite
-
+[![Build Status](https://travis-ci.org/HAKASHUN/gulp-tfcsprite.svg?branch=master)](https://travis-ci.org/HAKASHUN/gulp-tfcsprite)
 > [tfcsprite](https://github.com/atsumo/tfcsprite/) plugin for [gulp](https://github.com/wearefractal/gulp)
 
 ## Usage
