@@ -1,6 +1,6 @@
 # gulp-tfcsprite
 
-> tfcsprite plugin for [gulp](https://github.com/wearefractal/gulp)
+> [tfcsprite](https://github.com/atsumo/tfcsprite/) plugin for [gulp](https://github.com/wearefractal/gulp)
 
 ## Usage
 
