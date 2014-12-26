@@ -6,6 +6,7 @@ var through = require("through2"),
 module.exports = function (param) {
   "use strict";
 
+  param = param || {};
   param.sprites = param.sprites || 'sprites';
   param.prefix = param.prefix || '_';
 
