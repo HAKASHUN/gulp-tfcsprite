@@ -18,7 +18,7 @@
   "dependencies": {
     "through2": "*",
     "gulp-util": "~2.2.0",
-    "tfcsprite": "*"
+    "tfcsprite": "git://github.com/HAKASHUN/tfcsprite.git"
   },
   "devDependencies": {
     "mocha": "*",
