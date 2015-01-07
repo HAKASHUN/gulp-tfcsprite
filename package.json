@@ -1,13 +1,12 @@
 {
   "name": "gulp-tfcsprite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A plugin for Gulp",
   "keywords": [
     "gulpplugin"
   ],
   "author": {
     "name": "HAKASHUN",
-    "email": "",
     "url": "https://github.com/HAKASHUN"
   },
   "repository": "HAKASHUN/gulp-tfcsprite",
