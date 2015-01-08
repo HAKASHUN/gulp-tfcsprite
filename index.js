@@ -45,10 +45,12 @@ module.exports = function (param) {
     // check if file.contents is a `Buffer`
     if (file.isBuffer()) {
 
-      var parsedPath = parsePath(file.path);
+      var target = Path.relative(process.cwd(), file.path);
+      var parsedPath = parsePath(target);
+      var directory = parsedPath.dirname + '/' + param.sprites;
       var converted = new TFCSpriteConverter(
-        file.path,
-          parsedPath.dirname + '/' + param.sprites,
+        target,
+        directory,
         param.prefix
       ).convert();
 
