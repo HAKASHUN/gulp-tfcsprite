@@ -55,7 +55,9 @@ module.exports = function (param) {
       ).convert();
 
 
-      file.contents = new Buffer(converted);
+      if (converted) {
+        file.contents = new Buffer(converted);
+      }
 
       this.push(file);
 
